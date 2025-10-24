@@ -1,0 +1,140 @@
+body,
+html {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.content {
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  height: 100%;
+}
+
+.formArea {
+  color: white;
+  grid-column: 1/2;
+  background-color: #396ab3;
+  background-image: linear-gradient(140deg, #163764, #396ab3);
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+form {
+  padding: 5px 30px;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-shadow: 2px 2px 4px #163764;
+}
+
+.header div {
+  font-size: 32px;
+  font-weight: 900;
+}
+#n {
+  margin-bottom: 20px;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs input {
+  color: white;
+  background-color: #163764;
+  height: 20px;
+  width: 60%;
+  border: none;
+  font-size: large;
+  padding: 10px 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.inputs input:hover {
+  outline: 1px white solid;
+}
+
+/*radio buttons styling*/
+
+.l-radio {
+  padding: 6px;
+  border-radius: 50px;
+  display: inline-flex;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin: 8px 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.l-radio:hover,
+.l-radio:focus-within {
+  background: #163764;
+}
+
+.l-radio input {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: none;
+  border: 0;
+  box-shadow: inset 0 0 0 1.5px #9f9f9f;
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  transition: box-shadow 150ms cubic-bezier(0.95, 0.15, 0.5, 1.25);
+  pointer-events: none;
+}
+
+.l-radio input:focus {
+  outline: none;
+}
+
+.l-radio input:checked {
+  box-shadow: inset 0 0 0 6px #ffffff;
+}
+
+.l-radio span {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 20px;
+  padding: 0 8px;
+}
+
+#radios {
+  margin-bottom: 10px;
+}
+
+button {
+  font-size: larger;
+  border: none;
+  padding: 10px 50px;
+  background-color: #163764;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 5px 9px 1px #080d1d;
+  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #042b62;
+}
+
+#help {
+  margin-bottom: 20px;
+}
+
+.rightSide {
+  grid-column: 2/3;
+}
