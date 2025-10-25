@@ -9,6 +9,7 @@ html {
   display: grid;
   grid-template-columns: 45% 1fr;
   height: 100%;
+  background-color: #cfdcec;
 }
 
 .formArea {
@@ -137,4 +138,26 @@ button:hover {
 
 .rightSide {
   grid-column: 2/3;
+  display: grid;
+  place-items: center;
+}
+
+.rightSide img {
+  width: 70%;
+  height: 90%;
+}
+
+#icons {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+#icons img {
+  transition: transform 0.3 1 1;
+}
+#icons img:hover {
+  transform: scale(1.2);
 }
