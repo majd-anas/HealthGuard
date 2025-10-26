@@ -198,6 +198,7 @@ small {
   grid-template-columns: 1fr 1fr;
   width: 100%;
   padding: 10px 40px;
+  gap: 10px;
 }
 
 .medications {
@@ -254,6 +255,10 @@ small {
 
 .stepCounter {
   background-color: #bed9ff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* The switch - the box around the slider */
 .switch {
