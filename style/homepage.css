@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Lato";
+}
+body,
+html {
+  height: 100vh;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 5% 60% 33%;
+  height: 100%;
+  position: relative;
+}
+
+nav {
+  position: fixed;
+  grid-column: 1/2;
+  background-color: #a6cbff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 10px;
+  width: 5%;
+}
+
+.main {
+  grid-column: 2/3;
+  background-color: #dbeafe;
+}
+
+.sideBar {
+  grid-column: 3/4;
+  height: 100%;
+}
+.logo {
+  margin-bottom: 100%;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+ul img {
+  transform: scale(0.6);
+  transition: transform 1 1 1;
+}
+
+ul img:hover {
+  transform: scale(0.85);
+}
+.logo img {
+  transform: scale(0.7);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.welcomeCard {
+  display: grid;
+  background-color: #bed9ff;
+  padding: 10px 20px;
+  padding-left: 0;
+  width: 90%;
+  height: 23%;
+  grid-template-columns: 30% 1fr;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+#welcomImg {
+  width: 190px;
+  height: 150px;
+}
+.welcomeCard > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+h1 {
+  margin-bottom: 5px;
+}
+.reminder,
+.bye {
+  font-size: 18px;
+}
+
+.red {
+  color: brown;
+}
+
+.bye span {
+  margin-right: 40%;
+}
+.bye button {
+  background-color: #cd5959;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.bye button:hover {
+  background-color: #a33f3f;
+}
+
+.vitals {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 90%;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.vitals > div {
+  background-color: #bed9ff;
+  padding: 10px;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr 0.5fr;
+}
+
+.vitals > div:first-child {
+  background-color: #396ab3;
+}
+.vitals > div:first-child .reading {
+  color: white;
+  font-weight: bolder;
+  justify-self: center;
+  font-size: 27px;
+}
+
+.vitals img {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  transform: scale(0.9);
+}
+
+.vitals .reading {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: start;
+  align-self: center;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.vitals .type {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  justify-self: start;
+  font-size: 18px;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #c72a2a, #e27a5a);
+  background-clip: text;
+  color: transparent;
+}
+
+.vitals button {
+  grid-column: 1/3;
+  grid-row: 3/4;
+  justify-self: stretch;
+  border: none;
+  border-radius: 20px;
+  background-color: #163764;
+  color: white;
+}
+
+.vitals button:hover {
+  transform: scale(1.03);
+  border: solid 2px white;
+}
+
+small {
+  font-size: 10px;
+}
+.vitals .icon {
+  width: 60px;
+  height: 60px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  padding: 10px 40px;
+}
+
+.medications {
+  grid-column: 1/2;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding: 15px;
+  background-color: #bed9ff;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+.medications > div {
+  background-color: rgb(136, 167, 212);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.medications .medName {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  font-size: large;
+}
+
+.medications .time {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  font-size: small;
+  align-self: center;
+}
+
+.medications .pillNo {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  font-size: small;
+  color: white;
+}
+
+.medications label {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-self: end;
+}
+
+.medications .taken {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  justify-self: end;
+  margin-right: 5px;
+}
+
+.stepCounter {
+  background-color: #bed9ff;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 27px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #cd5959;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #cd5959;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

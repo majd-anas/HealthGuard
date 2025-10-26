@@ -4,95 +4,128 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../style/homepage.css" />
   </head>
   <body>
     <div class="content">
       <nav>
-        <div class="logo">logo</div>
+        <div class="logo">
+          <img src="../assets/logo.png" alt="" />
+        </div>
         <ul>
-          <li class="1">
-            <img src="" alt="" />
+          <li class="i1">
+            <a href=""><img src="../assets/onHome.png" alt="" /></a>
           </li>
-          <li class="2">
-            <img src="" alt="" />
+          <li class="i2">
+            <a href=""><img src="../assets/medication.png" alt="" /></a>
           </li>
-          <li class="3">
-            <img src="" alt="" />
+          <li class="i3">
+            <a href=""><img src="../assets/vitals.png" alt="" /></a>
           </li>
-          <li class="4">
-            <img src="" alt="" />
+          <li class="i4">
+            <a href=""><img src="../assets/doctors.png" alt="" /></a>
           </li>
-          <li class="5">
-            <img src="" alt="" />
+          <li class="i5">
+            <a href=""><img src="../assets/calender.png" alt="" /></a>
           </li>
         </ul>
       </nav>
 
       <div class="main">
         <div class="welcomeCard">
-          <h2>Good morning, patient 105!</h2>
-          <div class="reminder">
-            Don't forget to measure your blood surgar before breakfast, and t o
-            take your vitamins.
+          <img id="welcomImg" src="../assets/homepagedocotor.png" alt="" />
+          <div>
+            <h2>Good morning, patient 105!</h2>
+            <div class="reminder">
+              Don't forget to measure your
+              <span class="red">blood surgar</span> before breakfast, and to
+              take your <span class="red">vitamins</span>.
+            </div>
+            <div class="bye">
+              <span>have a lovely day!</span> <button>REPORT PAIN</button>
+            </div>
           </div>
-          <div class="bye">have a lovely day!</div>
         </div>
 
         <div class="vitals">
           <div>
-            <img src="" alt="" class="icon" />
-            <div class="reading"></div>
-            <div class="type"></div>
-            <button></button>
+            <img src="../assets/heat rate.png" alt="" class="icon" />
+            <div class="reading">!</div>
+            <div class="type">Heart Rate</div>
+            <button>Enter Reading</button>
           </div>
           <div>
-            <img src="" alt="" class="icon" />
-            <div class="reading"></div>
-            <div class="type"></div>
-            <button></button>
+            <img src="../assets/blood pressure.png" alt="" class="icon" />
+            <div class="reading">120 <small>mm/hg</small></div>
+            <div class="type">Blood Pressure</div>
+            <!-- <button></button> -->
           </div>
           <div>
-            <img src="" alt="" class="icon" />
-            <div class="reading"></div>
-            <div class="type"></div>
-            <button></button>
+            <img src="../assets/Blood sugar.png" alt="" class="icon" />
+            <div class="reading">106 <small>mm/dl</small></div>
+            <div class="type">Blood Sugar</div>
+            <!-- <button></button> -->
           </div>
           <div>
-            <img src="" alt="" class="icon" />
-            <div class="reading"></div>
-            <div class="type"></div>
-            <button></button>
+            <img src="../assets/cholesterol.png" alt="" class="icon" />
+            <div class="reading">60 <small>mg/dl</small></div>
+            <div class="type">Cholesterol</div>
+            <!-- <button></button> -->
           </div>
         </div>
 
         <div class="cards">
           <div class="medications">
             <div>
-              <div class="medName">m1</div>
-              <div>time</div>
-              <button class="toggle"></button>
+              <div class="medName">Tylenol</div>
+              <div class="time">Daily-2:30pm</div>
+
+              <div class="pillNo">12 pills left</div>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <div class="taken">taken</div>
             </div>
             <div>
-              <div class="medName">m2</div>
-              <div>time</div>
-              <button class="toggle"></button>
+              <div class="medName">Panadol</div>
+              <div class="time">Daily-2:30pm</div>
+
+              <div class="pillNo">12 pills left</div>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <div class="taken">taken</div>
             </div>
             <div>
-              <div class="medName">m3</div>
-              <div>time</div>
-              <button class="toggle"></button>
+              <div class="medName">Vitamin D</div>
+              <div class="time">Daily-2:30pm</div>
+
+              <div class="pillNo">12 pills left</div>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <div class="taken">taken</div>
             </div>
             <div>
-              <div class="medName">m4</div>
-              <div>time</div>
-              <button class="toggle"></button>
+              <div class="medName">Omol</div>
+              <div class="time">Daily-2:30pm</div>
+
+              <div class="pillNo">12 pills left</div>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <div class="taken">taken</div>
             </div>
           </div>
 
           <div class="stepCounter">
-            <div class="title"></div>
-            <div class="odometer"></div>
-            <div class="stepsNo"></div>
+            <div>
+              <canvas id="myChart"></canvas>
+            </div>
           </div>
         </div>
 
@@ -132,5 +165,77 @@
         <button class="Emergency">Emergency</button>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const COMPLETED_STEPS = 200;
+      const TOTAL_STEPS = 1000;
+      const REMAINING_STEPS = TOTAL_STEPS - COMPLETED_STEPS;
+      const PERCENTAGE = (COMPLETED_STEPS / TOTAL_STEPS) * 100;
+
+      const data = {
+        labels: ["Steps Completed", "Steps Remaining"],
+        datasets: [
+          {
+            data: [COMPLETED_STEPS, REMAINING_STEPS], // [200, 800]
+            backgroundColor: ["#163764", "#e9ecef"],
+            hoverOffset: 4,
+            borderWidth: 0,
+            borderRadius: 5,
+          },
+        ],
+      };
+
+      const config = {
+        type: "doughnut",
+        data: data,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: {
+                font: {
+                  size: 14,
+                },
+              },
+            },
+            tooltip: {
+              callbacks: {
+                // Customize the tooltip label to show both count and percentage
+                label: function (context) {
+                  let label = context.label || "";
+                  if (label) {
+                    label += ": ";
+                  }
+                  if (context.parsed !== null) {
+                    const total = context.chart._metasets[0].total;
+                    const currentValue = context.parsed;
+                    const percentage = parseFloat(
+                      ((currentValue / total) * 100).toFixed(1)
+                    );
+                    label += currentValue + " (" + percentage + "%)";
+                  }
+                  return label;
+                },
+              },
+            },
+            title: {
+              display: true,
+              text: "Progress Tracker (20% Complete)",
+              font: {
+                size: 18,
+                color: "#163764",
+              },
+            },
+          },
+          cutout: "80%",
+        },
+      };
+
+      const myChart = new Chart(document.getElementById("myChart"), config);
+    </script>
   </body>
 </html>
