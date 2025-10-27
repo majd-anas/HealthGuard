@@ -129,40 +129,116 @@
           </div>
         </div>
 
-        <div class="chart"></div>
+        <div class="chart">
+          <h2 style="color: #171e35; margin-bottom: 20px">Weekly progress</h2>
+          <div>
+            <canvas id="lineChart"></canvas>
+          </div>
+        </div>
       </div>
 
-      <div class="sideBar">
-        <div class="profilePic">
-          <img src="" alt="" />
+      <div class="sidebar-bg">
+        <!-- User Profile Section -->
+        <div class="ProfilePic flex flex-col items-center mb-10 mt-4">
+          <!-- Profile Image (Placeholder for "Morticia Adams") -->
+          <img
+            class="profile-img"
+            src="https://placehold.co/90x90/FFFFFF/FF66B2?text=M.A"
+            alt="Morticia Adams Profile Picture"
+            onerror="this.onerror=null; this.src='https://placehold.co/90x90/FFFFFF/FF66B2?text=User'"
+          />
+
+          <h1 class="text-3xl font-semibold mt-4">Morticia Adams</h1>
         </div>
-        <div class="name">Morticia Adams</div>
 
-        <div class="quickHelp">
-          <div class="call">call mark</div>
-          <div class="sport">exercise</div>
-        </div>
-
-        <div class="calender"></div>
-
-        <div class="appointements">
-          <div class="ap1">
-            <div class="info">
-              orem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-              iure autem
+        <!-- Weather and Activity Cards -->
+        <div class="space-y-4 mb-8">
+          <!-- Weather Card -->
+          <div class="info-card">
+            <!-- SVG Icon Placeholder for Weather to match the complex graphic -->
+            <div class="weather-icon-placeholder mr-4">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient
+                    id="cloudyGrad"
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#f59e0b" />
+                    <stop offset="100%" stop-color="#fbbf24" />
+                  </linearGradient>
+                </defs>
+                <!-- Sun (Yellow/Orange) -->
+                <circle cx="35" cy="35" r="20" fill="url(#cloudyGrad)" />
+                <!-- Clouds (White/Light Blue) -->
+                <path
+                  d="M 60 50 C 60 40, 75 40, 75 50 C 75 60, 60 60, 60 50 Z"
+                  fill="#9CA3AF"
+                />
+                <path
+                  d="M 70 60 C 70 50, 85 50, 85 60 C 85 70, 70 70, 70 60 Z"
+                  fill="#E5E7EB"
+                />
+                <path
+                  d="M 50 60 C 50 50, 65 50, 65 60 C 65 70, 50 70, 50 60 Z"
+                  fill="#E5E7EB"
+                />
+              </svg>
             </div>
-            <div class="time">tommorow</div>
-          </div>
-          <div class="ap2">
-            <div class="info">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-              iure autem
+
+            <div class="flex-grow">
+              <p class="text-3xl font-bold">
+                22<span class="text-2xl font-normal">c</span>
+              </p>
+              <p class="text-sm font-light">cloudy</p>
+              <p class="text-xs font-light mt-1 opacity-75">
+                you should take a jacket
+              </p>
             </div>
-            <div class="time">today</div>
           </div>
         </div>
 
-        <button class="Emergency">Emergency</button>
+        <!-- Notifications Section -->
+        <div class="mb-8">
+          <h3 class="text-xl font-medium mb-3 border-b border-white/30 pb-1">
+            Notifications
+          </h3>
+
+          <!-- Notification 1 -->
+          <div class="notification-card flex justify-between items-start">
+            <div>
+              <p class="text-sm font-medium leading-tight">
+                you have an appointment with doctor Omar- Cardiologist
+              </p>
+              <p class="text-xs opacity-70 mt-1">October/19th - 4:00pm</p>
+            </div>
+            <button
+              class="text-xs font-bold opacity-60 ml-4 hover:opacity-100 transition duration-150"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+
+          <!-- Notification 2 -->
+          <div class="notification-card flex justify-between items-start">
+            <div>
+              <p class="text-sm font-medium leading-tight">
+                you have an appointment with doctor Omar- Cardiologist
+              </p>
+              <p class="text-xs opacity-70 mt-1">October/19th - 4:00pm</p>
+            </div>
+            <button
+              class="text-xs font-bold opacity-60 ml-4 hover:opacity-100 transition duration-150"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Emergency Button (Note the spelling correction) -->
+        <button class="emergency-btn w-full text-lg">EMERGENCY</button>
       </div>
     </div>
 
@@ -236,6 +312,101 @@
       };
 
       const myChart = new Chart(document.getElementById("myChart"), config);
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const ctx = document.getElementById("lineChart");
+
+        // Sample data designed to roughly mimic the shape of the curve in the image
+        const labels = ["sun", "mon", "tue", "wed", "thr", "today"];
+        const data = [5, 65, 58, 100, 90, 105];
+        const primaryColor = "#e35f5f"; // A coral red color
+
+        // Helper function for exponential backoff during API calls (though not strictly needed for Chart.js init,
+        // it's a good practice for asynchronous operations).
+        // Included here for completeness per instructions, though unused in this client-side chart generation.
+        function exponentialBackoffFetch(
+          url,
+          options,
+          maxRetries = 5,
+          delay = 1000
+        ) {
+          // Since this is client-side Chart.js initialization, we can skip the fetch logic
+          // but keep the function signature structure if future API use is required.
+          return new Promise((resolve) => resolve());
+        }
+
+        new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: "Progress",
+                data: data,
+                borderColor: primaryColor,
+                backgroundColor: primaryColor + "40", // Semi-transparent fill
+                borderWidth: 2.5,
+                pointRadius: 0, // Hide data points
+                fill: false, // Do not fill area under the line
+                tension: 0.4, // CRITICAL: This creates the smooth, curved line
+                cubicInterpolationMode: "monotone",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: {
+              padding: {
+                top: 20,
+              },
+            },
+            plugins: {
+              legend: {
+                display: false, // We use a custom HTML legend above the chart
+              },
+              tooltip: {
+                enabled: true, // Show tooltips on hover
+              },
+            },
+            scales: {
+              y: {
+                min: 0,
+                max: 110, // Set max slightly over 100 to accommodate the last data point
+                ticks: {
+                  // Custom steps for Y-axis (10%, 25%, 50%, 75%, 100%)
+                  callback: function (value, index, ticks) {
+                    if ([10, 25, 50, 75, 100].includes(value)) {
+                      return value + "%";
+                    }
+                    return null; // Hide other intermediate ticks
+                  },
+                  color: "#555",
+                },
+                grid: {
+                  display: false, // Remove vertical grid lines
+                  drawBorder: false,
+                },
+              },
+              x: {
+                ticks: {
+                  color: "#555",
+                  font: {
+                    size: 14,
+                    weight: "bold",
+                  },
+                },
+                grid: {
+                  display: false, // Remove horizontal grid lines
+                  drawBorder: false,
+                },
+              },
+            },
+          },
+        });
+      });
     </script>
   </body>
 </html>

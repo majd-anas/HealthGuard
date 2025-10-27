@@ -10,13 +10,17 @@
 body,
 html {
   height: 100vh;
+  width: 100vw;
+  background-color: #bed9ff;
 }
 
 .content {
   display: grid;
-  grid-template-columns: 5% 60% 33%;
+  grid-template-columns: 5% 60% 35%;
   height: 100%;
   position: relative;
+  width: 100%;
+  gap: none;
 }
 
 nav {
@@ -37,9 +41,9 @@ nav {
   background-color: #dbeafe;
 }
 
-.sideBar {
+.sidebar-bg {
   grid-column: 3/4;
-  height: 100%;
+  width: 100%;
 }
 .logo {
   margin-bottom: 100%;
@@ -259,6 +263,96 @@ small {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.chart {
+  width: 100%;
+  padding: 40px;
+  background-color: #dbeafe;
+  border-radius: 10px;
+}
+
+.sidebar-bg {
+  background-color: #1a3263; /* Deep blue color */
+  min-height: 100vh;
+  color: white;
+  padding: 1.5rem 1rem;
+  width: 100%;
+  max-width: 400px; /* Constrain width for mobile feel */
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Profile Image Styles */
+
+.profile-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Weather and Food Card Styles */
+.info-card {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.15
+  ); /* Slightly transparent white for a frosted look */
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+/* Notification Card Styles */
+.notification-card {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Custom icons to match the image */
+.weather-icon-placeholder {
+  /* Using a complex shadow/filter to mimic the illustrated icon */
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+  width: 50px;
+  height: 50px;
+}
+.food-icon-placeholder {
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+  width: 50px;
+  height: 50px;
+}
+
+/* Emergency Button Styling */
+.emergency-btn {
+  background-color: #cf2e35; /* Custom red color */
+  border: 2px solid #a01a20;
+  padding: 0.75rem 0;
+  border-radius: 8px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+  color: white;
+  width: 70%;
+  margin-left: 55px;
+}
+.emergency-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.6);
 }
 /* The switch - the box around the slider */
 .switch {
