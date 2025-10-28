@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Lato";
+}
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  background-color: #bed9ff;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 5% 1fr;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  gap: none;
+}
+
+nav {
+  position: fixed;
+  grid-column: 1/2;
+  background-color: #a6cbff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 10px;
+  width: 5%;
+}
+
+.logo {
+  margin-bottom: 100%;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+ul img {
+  transform: scale(0.6);
+  transition: transform 1 1 1;
+}
+
+ul img:hover {
+  transform: scale(0.85);
+}
+.logo img {
+  transform: scale(0.7);
+}
+
+.main {
+  grid-column: 2/3;
+  display: grid;
+  grid-template-rows: 1fr 5fr;
+  padding: 0px 40px;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0px 40px;
+  margin-bottom: 40px;
+  color: #151f3d;
+}
+
+.legend::before {
+  content: "";
+  padding: 1px;
+  background-color: #151f3d;
+  position: absolute;
+  top: 112px;
+  left: 0;
+  width: 94%;
+  margin: auto 20px;
+}
+
+.left img {
+  width: 100px;
+  transform: scale(0.8);
+  position: relative;
+  top: 15px;
+}
+
+.left span {
+  font-size: xx-large;
+}
+
+.setho {
+  transform: scale(0.6);
+  position: relative;
+  top: 15px;
+}
+
+select {
+  border: none;
+  background-color: #bed9ff;
+  font-size: larger;
+}
+.right {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+div.doctors {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 20px;
+}
+
+.doctor {
+  display: grid;
+  grid-template-columns: 150px 200px 1fr;
+  background-color: #163764;
+  padding: 10px 30px;
+  color: white;
+  border-radius: 10px;
+  width: 97%;
+}
+
+.doctor img {
+  grid-column: 1/2;
+  width: 110px;
+  height: 110px;
+  align-self: center;
+}
+
+.doctor .infoBox1 {
+  grid-column: 2/3;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: start;
+  font-size: larger;
+}
+
+.infoBox1 span {
+  display: block;
+  font-size: small;
+  font-weight: light;
+}
+
+.infoBox1 button {
+  background-color: #cd5959;
+  color: white;
+  border: none;
+  font-size: large;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.icons {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  align-self: flex-end;
+}
+.doctor .infoBox2 {
+  grid-column: 3/4;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: start;
+  justify-items: start;
+  margin-left: 20px;
+  gap: 50px;
+}
+
+.icons img {
+  width: 30px;
+  height: 30px;
+}
+
+.infoBox2 .contact {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
