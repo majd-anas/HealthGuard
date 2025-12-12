@@ -151,34 +151,51 @@
                 <div class="threshold-icon">💧</div>
                 <div>
                   <div class="threshold-value">
-                    120 <span class="threshold-unit">mm/hg</span>
+                    <input type="number" value="120" class="threshold-input" />
+                    <span class="threshold-unit">mm/hg</span>
                   </div>
                   <div class="threshold-label">Blood pressure</div>
+                  <button class="update-btn">Update</button>
                 </div>
               </div>
               <div class="threshold-item">
                 <div class="threshold-icon">❤️</div>
                 <div>
                   <div class="threshold-value">
-                    102<span class="threshold-unit">mp</span>
+                    <input
+                      type="number"
+                      value="102"
+                      class="threshold-input"
+                    /><span class="threshold-unit">mp</span>
                   </div>
                   <div class="threshold-label">Heart rate</div>
+                  <button class="update-btn">Update</button>
                 </div>
               </div>
               <div class="threshold-item">
                 <div class="threshold-icon">🩸</div>
                 <div>
                   <div class="threshold-value">
-                    106 <span class="threshold-unit">mg/dl</span>
+                    <input
+                      type="number"
+                      value="106"
+                      class="threshold-input"
+                      step="0.1"
+                    />
+                    <span class="threshold-unit">mg/dl</span>
                   </div>
                   <div class="threshold-label">Blood sugar</div>
+                  <button class="update-btn">Update</button>
                 </div>
               </div>
               <div class="threshold-item">
                 <div class="threshold-icon">🌡️</div>
                 <div>
-                  <div class="threshold-value">37c</div>
+                  <div class="threshold-value">
+                    <input type="number" value="37" class="threshold-input" />c
+                  </div>
                   <div class="threshold-label">Temperature</div>
+                  <button class="update-btn">Update</button>
                 </div>
               </div>
             </div>
@@ -263,5 +280,6 @@
         },
       });
     </script>
+    <script src="../../js/patientOverview.js"></script>
   </body>
 </html>

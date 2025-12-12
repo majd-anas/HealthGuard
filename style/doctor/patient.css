@@ -337,3 +337,37 @@ ul img:hover {
   font-size: 14px;
   font-weight: 400;
 }
+
+.threshold-input {
+  width: 60px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a3d5c;
+  background: white;
+  text-align: center;
+}
+
+.update-btn {
+  background-color: #cd5959;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 5px;
+}
+
+.update-btn:hover {
+  background-color: #b84747;
+}
+
+.patient-name a {
+  color: white;
+  text-decoration: none;
+}

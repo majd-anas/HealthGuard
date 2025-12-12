@@ -201,3 +201,12 @@ input[type="search"]::placeholder {
   display: block;
   margin-bottom: 2px;
 }
+.patient-name a {
+  color: white;
+  text-decoration: none;
+  transition: transform 1s 3s ease;
+}
+.patient-name:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
