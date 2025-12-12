@@ -39,22 +39,19 @@ nav {
 .logo {
   margin-bottom: 100%;
 }
-
 ul {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-
 ul img {
   transform: scale(0.6);
-  transition: transform 0.2s;
+  transition: transform 1 1 1;
 }
 
 ul img:hover {
   transform: scale(0.85);
 }
-
 .logo img {
   transform: scale(0.7);
 }
@@ -175,6 +172,7 @@ ul img:hover {
   cursor: pointer;
   border-bottom: 3px solid transparent;
   transition: all 0.2s;
+  text-decoration: none;
 }
 
 .tab.active {

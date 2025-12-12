@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../style/patient/homepage.css" />
   </head>
   <body>
+    <div id="overlay" class="overlay"></div>
     <form method="post" id="painForm">
       <button type="button" id="close">x</button>
       <h1>pain report</h1>
@@ -39,19 +40,34 @@
         </div>
         <ul>
           <li class="i1">
-            <a href=""><img src="../../assets/onHome.png" alt="" /></a>
+            <a href="homepage.html"
+              ><img src="../../assets/onHome.png" alt=""
+            /></a>
           </li>
           <li class="i2">
-            <a href=""><img src="../../assets/medication.png" alt="" /></a>
+            <a href="meds.html"
+              ><img src="../../assets/medication.png" alt=""
+            /></a>
           </li>
           <li class="i3">
-            <a href=""><img src="../../assets/vitals.png" alt="" /></a>
+            <a href="vitals.html"
+              ><img src="../../assets/vitals.png" alt=""
+            /></a>
           </li>
           <li class="i4">
-            <a href=""><img src="../../assets/doctors.png" alt="" /></a>
+            <a href="doctors.html"
+              ><img src="../../assets/doctors.png" alt=""
+            /></a>
           </li>
           <li class="i5">
-            <a href=""><img src="../../assets/calender.png" alt="" /></a>
+            <a href="calender.html"
+              ><img src="../../assets/calender.png" alt=""
+            /></a>
+          </li>
+          <li class="i6">
+            <a href="chat/chat.html"
+              ><img src="../../assets/Union.png" alt=""
+            /></a>
           </li>
         </ul>
       </nav>
@@ -67,7 +83,8 @@
               take your <span class="red">vitamins</span>.
             </div>
             <div class="bye">
-              <span>have a lovely day!</span> <button>REPORT PAIN</button>
+              <span>have a lovely day!</span>
+              <button id="reportPainBtn">REPORT PAIN</button>
             </div>
           </div>
         </div>
@@ -75,27 +92,27 @@
         <div class="vitals">
           <div>
             <img src="../../assets/heat rate.png" alt="" class="icon" />
-            <div class="reading">!</div>
+            <div class="reading" id="heartRateReading">!</div>
             <div class="type">Heart Rate</div>
-            <button>Enter Reading</button>
+            <button id="heartRateBtn">Enter Reading</button>
           </div>
-          <div>
+          <div class="no-input">
             <img src="../../assets/blood pressure.png" alt="" class="icon" />
-            <div class="reading">120 <small>mm/hg</small></div>
+            <div class="reading" id="bloodPressureReading">!</div>
             <div class="type">Blood Pressure</div>
-            <!-- <button></button> -->
+            <button id="bloodPressureBtn">Enter Reading</button>
           </div>
-          <div>
+          <div class="no-input">
             <img src="../../assets/Blood sugar.png" alt="" class="icon" />
-            <div class="reading">106 <small>mm/dl</small></div>
+            <div class="reading" id="bloodSugarReading">!</div>
             <div class="type">Blood Sugar</div>
-            <!-- <button></button> -->
+            <button id="bloodSugarBtn">Enter Reading</button>
           </div>
-          <div>
+          <div class="no-input">
             <img src="../../assets/cholesterol.png" alt="" class="icon" />
-            <div class="reading">60 <small>mg/dl</small></div>
+            <div class="reading" id="cholesterolReading">!</div>
             <div class="type">Cholesterol</div>
-            <!-- <button></button> -->
+            <button id="cholesterolBtn">Enter Reading</button>
           </div>
         </div>
 
@@ -110,7 +127,7 @@
                 <input type="checkbox" />
                 <span class="slider round"></span>
               </label>
-              <div class="taken">taken</div>
+              <div class="taken">not taken</div>
             </div>
             <div>
               <div class="medName">Panadol</div>
@@ -121,7 +138,7 @@
                 <input type="checkbox" />
                 <span class="slider round"></span>
               </label>
-              <div class="taken">taken</div>
+              <div class="taken">not taken</div>
             </div>
             <div>
               <div class="medName">Vitamin D</div>
@@ -132,7 +149,7 @@
                 <input type="checkbox" />
                 <span class="slider round"></span>
               </label>
-              <div class="taken">taken</div>
+              <div class="taken">not taken</div>
             </div>
             <div>
               <div class="medName">Omol</div>
@@ -143,7 +160,7 @@
                 <input type="checkbox" />
                 <span class="slider round"></span>
               </label>
-              <div class="taken">taken</div>
+              <div class="taken">not taken</div>
             </div>
           </div>
 
@@ -263,7 +280,9 @@
         </div>
 
         <!-- Emergency Button (Note the spelling correction) -->
-        <button class="emergency-btn w-full text-lg">EMERGENCY</button>
+        <button id="emergencyBtn" class="emergency-btn w-full text-lg">
+          EMERGENCY
+        </button>
       </div>
     </div>
 
@@ -433,5 +452,7 @@
         });
       });
     </script>
+
+    <script src="../../js/homepage.js"></script>
   </body>
 </html>

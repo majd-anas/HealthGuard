@@ -160,6 +160,10 @@ div.doctors {
   padding: 5px 10px;
   border-radius: 10px;
 }
+
+.book:hover {
+  transform: scale(1.03);
+}
 .icons {
   display: flex;
   width: 100%;

@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../../style/doctor/patient.css" />
+    <title>Patient Overview</title>
+    <link rel="stylesheet" href="../../style/caregiver/patientOverview.css" />
+  </head>
   </head>
   <body>
     <div class="content">
@@ -14,14 +15,19 @@
         </div>
         <ul>
           <li class="i1">
-            <a href="doctorLanding.html"
-              ><img src="../../assets/onHome.png" alt=""
-            /></a>
+            <a href=""><img src="../../assets/onHome.png" alt="" /></a>
           </li>
           <li class="i2">
-            <a href="chat/chat.html"
-              ><img src="../../assets/Union.png" alt=""
-            /></a>
+            <a href=""><img src="../../assets/medication.png" alt="" /></a>
+          </li>
+          <li class="i3">
+            <a href=""><img src="../../assets/vitals.png" alt="" /></a>
+          </li>
+          <li class="i4">
+            <a href=""><img src="../../assets/doctors.png" alt="" /></a>
+          </li>
+          <li class="i5">
+            <a href=""><img src="../../assets/calender.png" alt="" /></a>
           </li>
         </ul>
       </nav>
@@ -32,20 +38,26 @@
             <div class="patient-profile-img">
               <img src="../../assets/profile.png" alt="" />
             </div>
-            <div class="patient-name">Penelope Adams</div>
           </div>
 
           <div class="patient-basic-info">
-            <div>
-              <strong>Age:</strong> 77 &nbsp;&nbsp;
-              <strong>Gender:</strong> female
-            </div>
+            <div class="patient-name">Morticia Adams</div>
+            <div><strong>Age:</strong> 77</div>
+            <div><strong>Gender:</strong> female</div>
             <div><strong>Care giver:</strong> Gomaze adams</div>
             <div><strong>Card number:</strong> 7723</div>
             <div class="blood-weight-info">
               <strong>blood type:</strong> B+ &nbsp;&nbsp;
               <strong>wight:</strong> 70kg &nbsp;&nbsp;
               <strong>hight:</strong> 167cm
+            </div>
+          </div>
+
+          <div class="patient-contact-info">
+            <div><strong>Phone:</strong><br />+962 7799821</div>
+            <div><strong>Email:</strong><br />morti.Ad@gmail.com</div>
+            <div>
+              <strong>Address:</strong><br />amman- tabarbor- 11th steet
             </div>
             <div class="action-icons">
               <a href="" class="action-icon">
@@ -54,25 +66,11 @@
               <a href="" class="action-icon">
                 <img src="../../assets/Video.png" alt="" />
               </a>
+              <a href="" class="action-icon">
+                <img src="../../assets/call.png" alt="" />
+              </a>
             </div>
           </div>
-
-          <div class="patient-contact-info">
-            <div><strong>Phone:</strong> +962 7799821</div>
-            <div><strong>Email:</strong> pen.Ad@gmail.com</div>
-            <div>
-              <strong>Address:</strong><br />amman- tabarbor- 11th steet
-            </div>
-            <div style="margin-top: 10px">
-              <strong>Conditions:</strong> Hyper tension, Type 2 diabetes
-            </div>
-          </div>
-        </div>
-
-        <div class="tabs">
-          <div class="tab active">Over All Status</div>
-          <a class="tab" href="patientHistory.html">History</a>
-          <a class="tab" href="Patientmedication.html">Medications</a>
         </div>
 
         <div class="content-section">
@@ -80,8 +78,8 @@
             <h3>Over all Status</h3>
             <div class="status-chart">
               <canvas id="statusChart"></canvas>
+              <div class="status-text">72%</div>
             </div>
-            <div class="status-text">72%</div>
             <div class="status-label">
               excellent<br />720 steps<br />out of 1000 steps
             </div>
@@ -104,88 +102,82 @@
           <div class="card medications-card">
             <h3>Today's Medications</h3>
             <div class="medication-item">
-              <div class="medication-icon"></div>
-              <div>
-                <div style="font-weight: 600">Tylenol</div>
-                <div class="medication-time">Taken at 2pm</div>
+              <div class="medication-info">
+                <div class="medication-details">
+                  <div class="medication-name">Tylenol</div>
+                  <div class="medication-time">Taken at 2pm</div>
+                </div>
               </div>
-              <div class="medication-refill">NEEDS REFILL</div>
-              <div class="medication-pills">5 pills left</div>
-            </div>
-            <div class="medication-item">
-              <div class="medication-icon"></div>
-              <div>
-                <div style="font-weight: 600">Tylenol</div>
-                <div class="medication-time">Taken at 2pm</div>
-              </div>
-              <div class="medication-pills" style="grid-column: 3/5">
-                12 pills left
+              <div class="medication-status">
+                <span class="medication-refill">Refill Required</span>
+                <span class="medication-pills">5 pills left</span>
               </div>
             </div>
             <div class="medication-item">
-              <div class="medication-icon"></div>
-              <div>
-                <div style="font-weight: 600">Tylenol</div>
-                <div class="medication-time">Not Taken</div>
+              <div class="medication-info">
+                <div class="medication-checkbox checked"></div>
+                <div class="medication-details">
+                  <div class="medication-name">Tylenol</div>
+                  <div class="medication-time">Taken at 2pm</div>
+                </div>
               </div>
-              <div style="grid-column: 3/5; color: #cd5959; font-size: 12px">
-                2 pills left
+              <div class="medication-status">
+                <span class="medication-pills">12 pills left</span>
               </div>
             </div>
             <div class="medication-item">
-              <div class="medication-icon"></div>
-              <div>
-                <div style="font-weight: 600">Tylenol</div>
-                <div class="medication-time">Taken at 2pm</div>
+              <div class="medication-info">
+                <div class="medication-checkbox"></div>
+                <div class="medication-details">
+                  <div class="medication-name">Tylenol</div>
+                  <div class="medication-time">Not Taken</div>
+                </div>
               </div>
-              <div class="medication-pills" style="grid-column: 3/5">
-                12 pills left
+              <div class="medication-status">
+                <span class="medication-pills">2 pills left</span>
+              </div>
+            </div>
+            <div class="medication-item">
+              <div class="medication-info">
+                <div class="medication-checkbox checked"></div>
+                <div class="medication-details">
+                  <div class="medication-name">Tylenol</div>
+                  <div class="medication-time">Taken at 2pm</div>
+                </div>
+              </div>
+              <div class="medication-status">
+                <span class="medication-pills">12 pills left</span>
               </div>
             </div>
           </div>
 
-          <div class="card">
-            <h3>Thresholds</h3>
-            <div class="thresholds-card">
-              <div class="threshold-item">
-                <div class="threshold-icon">💧</div>
-                <div>
-                  <div class="threshold-value">
-                    120 <span class="threshold-unit">mm/hg</span>
-                  </div>
-                  <div class="threshold-label">Blood pressure</div>
-                </div>
-              </div>
-              <div class="threshold-item">
-                <div class="threshold-icon">❤️</div>
-                <div>
-                  <div class="threshold-value">
-                    102<span class="threshold-unit">mp</span>
-                  </div>
-                  <div class="threshold-label">Heart rate</div>
-                </div>
-              </div>
-              <div class="threshold-item">
-                <div class="threshold-icon">🩸</div>
-                <div>
-                  <div class="threshold-value">
-                    106 <span class="threshold-unit">mg/dl</span>
-                  </div>
-                  <div class="threshold-label">Blood sugar</div>
-                </div>
-              </div>
-              <div class="threshold-item">
-                <div class="threshold-icon">🌡️</div>
-                <div>
-                  <div class="threshold-value">37c</div>
-                  <div class="threshold-label">Temperature</div>
-                </div>
-              </div>
+          <div class="card notes-card">
+            <h3>Notes from doctor</h3>
+            <div class="notes-content">
+              <p>
+                Mrs. Penelope has been discharged following her treatment for
+                pneumonia. She is recovering well but requires close monitoring
+                for any signs of shortness of breath or fever.
+              </p>
+              <p><strong>Please ensure:</strong></p>
+              <ul>
+                <li>
+                  She completes her prescribed antibiotic course (7 days
+                  remaining).
+                </li>
+                <li>She uses her inhaler twice daily as instructed.</li>
+                <li>She avoids strenuous physical activity.</li>
+              </ul>
+              <p>
+                If you notice worsening cough, fever above 38°C, or difficulty
+                breathing, contact me immediately.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       // Status Doughnut Chart

@@ -256,6 +256,7 @@ ul img:hover {
 
 .medications-card {
   max-height: 400px;
+  overflow-y: auto;
 }
 
 .medication-item {
@@ -264,7 +265,7 @@ ul img:hover {
   border-radius: 10px;
   margin-bottom: 10px;
   display: grid;
-  grid-template-columns: 30px 1fr 100px 80px;
+  grid-template-columns: 30px 1fr auto;
   align-items: center;
   gap: 15px;
 }
