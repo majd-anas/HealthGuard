@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/style.css"></link>
+    <script src="js/index.js" defer></script>
 </head>
 <body>
     <div class="content">
@@ -26,20 +27,20 @@
 
                 <div id="radios">
                     <label for="f-option" class="l-radio">
-                        <input type="radio" id="f-option" name="selector" tabindex="1">
+                        <input type="radio" id="f-option" value="patient"name="selector" tabindex="1">
                         <span>Patient</span>
                     </label>
                     <label for="s-option" class="l-radio">
-                        <input type="radio" id="s-option" name="selector" tabindex="2">
+                        <input type="radio" id="s-option" value="doctor"name="selector" tabindex="2">
                         <span>Doctor</span>
                     </label>
                         <label for="t-option" class="l-radio">
-                        <input type="radio" id="t-option" name="selector" tabindex="3">
+                        <input type="radio" id="t-option" value="caregiver" name="selector" tabindex="3">
                         <span>Caregiver</span>
                     </label>
                     </div>
                 
-                <button id="log">Login</button>
+                <button id="log"><a id ="loglink" href="">Login</a></button>
                 <div id="help">Having trouble logging into your account? <a href="#">go here</a></div>
                 <div id="icons">
                     <a href="#"><img src="assets/Icon.png" alt="icon1"></a>

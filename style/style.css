@@ -161,3 +161,8 @@ button:hover {
 #icons img:hover {
   transform: scale(1.2);
 }
+
+button a {
+  text-decoration: none;
+  color: white;
+}
