@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Lato";
+}
+
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  background-color: #bed9ff;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 5% 1fr;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+nav {
+  position: fixed;
+  grid-column: 1/2;
+  background-color: #a6cbff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 10px;
+  width: 5%;
+}
+
+.logo {
+  margin-bottom: 100%;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+ul img {
+  transform: scale(0.6);
+  transition: transform 0.2s;
+}
+
+ul img:hover {
+  transform: scale(0.85);
+}
+
+.logo img {
+  transform: scale(0.7);
+}
+
+.main {
+  grid-column: 2/3;
+  background-color: #dbeafe;
+  padding: 30px 40px;
+  overflow-y: auto;
+}
+
+.patient-header {
+  background: linear-gradient(135deg, #2c5f8d 0%, #1a3d5c 100%);
+  border-radius: 15px;
+  padding: 25px 30px;
+  color: white;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  gap: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.patient-profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.patient-profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.patient-profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.patient-name {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.patient-basic-info {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.patient-basic-info div {
+  margin-bottom: 5px;
+}
+
+.patient-contact-info {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.patient-contact-info div {
+  margin-bottom: 5px;
+}
+
+.blood-weight-info {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.action-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.action-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.action-icon img {
+  width: 22px;
+  height: 22px;
+}
+
+.tabs {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.tab {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  color: #1a3d5c;
+  border-bottom-color: #cd5959;
+}
+
+.history-section {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.history-item {
+  margin-bottom: 40px;
+}
+
+.history-item:last-child {
+  margin-bottom: 0;
+}
+
+.history-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a3d5c;
+  margin-bottom: 15px;
+}
+
+.history-content {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #2c3e50;
+}
+
+.history-content ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.history-content li {
+  margin-bottom: 8px;
+}
+
+.medication-highlight {
+  color: #cd5959;
+  font-weight: 500;
+}

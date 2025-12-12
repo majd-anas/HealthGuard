@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../style/patient/vitals.css" />
+  </head>
+  <body>
+    <div class="content">
+      <nav>
+        <div class="logo">
+          <img src="../assets/logo.png" alt="" />
+        </div>
+        <ul>
+          <li class="i1">
+            <a href=""><img src="../assets/onHome.png" alt="" /></a>
+          </li>
+          <li class="i2">
+            <a href=""><img src="../assets/medication.png" alt="" /></a>
+          </li>
+          <li class="i3">
+            <a href=""><img src="../assets/vitals.png" alt="" /></a>
+          </li>
+          <li class="i4">
+            <a href=""><img src="../assets/doctors.png" alt="" /></a>
+          </li>
+          <li class="i5">
+            <a href=""><img src="../assets/calender.png" alt="" /></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="main">
+        <div class="legend">
+          <div class="legend-icon">🩺</div>
+          <div class="legend-icon">📱</div>
+          <span>Your vital history</span>
+        </div>
+
+        <div class="dashboard">
+          <div class="charts-section">
+            <div class="chart-card">
+              <div class="chart-header">
+                <h2>Heart-Rate</h2>
+                <span class="max-label">MAX</span>
+              </div>
+              <div style="position: relative">
+                <div class="dashed-line"></div>
+                <div class="chart-container">
+                  <canvas id="heartRateChart"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-header">
+                <h2>Blood pressure</h2>
+                <span class="max-label">MAX</span>
+              </div>
+              <div style="position: relative">
+                <div class="dashed-line"></div>
+                <div class="chart-container">
+                  <canvas id="bloodPressureChart"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-header">
+                <h2>Blood sugar</h2>
+                <span class="max-label">MAX</span>
+              </div>
+              <div style="position: relative">
+                <div class="dashed-line"></div>
+                <div class="chart-container">
+                  <canvas id="bloodSugarChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="vitals-section">
+            <div class="vitals-header">
+              <h2>Current Vitals</h2>
+            </div>
+
+            <div class="vital-card">
+              <div class="vital-icon">❤️</div>
+              <div class="vital-info">
+                <h3>112bpm</h3>
+                <p>heart rate</p>
+              </div>
+            </div>
+
+            <div class="vital-card">
+              <div class="vital-icon">💧</div>
+              <div class="vital-info">
+                <h3>120 <span style="font-size: 14px">mm/hg</span></h3>
+                <p>Blood pressure</p>
+              </div>
+            </div>
+
+            <div class="vital-card">
+              <div class="vital-icon">🩸</div>
+              <div class="vital-info">
+                <h3>106 <span style="font-size: 14px">mg/dl</span></h3>
+                <p>Blood sugar</p>
+              </div>
+            </div>
+
+            <div class="vital-card">
+              <div class="vital-icon">🌡️</div>
+              <div class="vital-info">
+                <h3>37c</h3>
+                <p>Temperature</p>
+              </div>
+            </div>
+
+            <div class="emergency-btn">Eremergency</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: false },
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            display: false,
+          },
+          x: {
+            grid: { display: false },
+            border: { display: false },
+            ticks: {
+              color: "#666",
+              font: { size: 11 },
+            },
+          },
+        },
+      };
+
+      // Heart Rate Chart
+      const heartRateCtx = document
+        .getElementById("heartRateChart")
+        .getContext("2d");
+      new Chart(heartRateCtx, {
+        type: "bar",
+        data: {
+          labels: days,
+          datasets: [
+            {
+              data: [65, 82, 78, 95, 75, 68, 58],
+              backgroundColor: [
+                "#ffd4a3",
+                "#b8c6ff",
+                "#ffd4a3",
+                "#5088ff",
+                "#ffd4a3",
+                "#b8c6ff",
+                "#ffd4a3",
+              ],
+              borderRadius: 6,
+              barPercentage: 0.7,
+            },
+          ],
+        },
+        options: chartOptions,
+      });
+
+      // Blood Pressure Chart
+      const bloodPressureCtx = document
+        .getElementById("bloodPressureChart")
+        .getContext("2d");
+      new Chart(bloodPressureCtx, {
+        type: "bar",
+        data: {
+          labels: days,
+          datasets: [
+            {
+              data: [55, 78, 75, 95, 72, 68, 65],
+              backgroundColor: [
+                "#ffd4a3",
+                "#b8c6ff",
+                "#ffd4a3",
+                "#5088ff",
+                "#ffd4a3",
+                "#b8c6ff",
+                "#ffd4a3",
+              ],
+              borderRadius: 6,
+              barPercentage: 0.7,
+            },
+          ],
+        },
+        options: chartOptions,
+      });
+
+      // Blood Sugar Chart
+      const bloodSugarCtx = document
+        .getElementById("bloodSugarChart")
+        .getContext("2d");
+      new Chart(bloodSugarCtx, {
+        type: "bar",
+        data: {
+          labels: days,
+          datasets: [
+            {
+              data: [70, 75, 78, 95, 72, 68, 65],
+              backgroundColor: [
+                "#ffd4a3",
+                "#b8c6ff",
+                "#ffd4a3",
+                "#5088ff",
+                "#ffd4a3",
+                "#b8c6ff",
+                "#ffd4a3",
+              ],
+              borderRadius: 6,
+              barPercentage: 0.7,
+            },
+          ],
+        },
+        options: chartOptions,
+      });
+    </script>
+  </body>
+</html>

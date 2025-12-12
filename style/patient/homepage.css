@@ -416,3 +416,17 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/*report pain form*/
+body {
+  position: relative;
+}
+#painForm {
+  background-color: #a33f3f;
+  padding: 30px;
+  position: absolute;
+  z-index: 100;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

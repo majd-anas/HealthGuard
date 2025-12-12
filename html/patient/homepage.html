@@ -4,36 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../style/homepage.css" />
+    <link rel="stylesheet" href="../../style/patient/homepage.css" />
   </head>
   <body>
+    <form method="post" id="painForm">
+      <button type="button" id="close">x</button>
+      <h1>pain report</h1>
+      <label for="paintlist">Type or Choose the type of Pain:</label>
+
+      <select id="painType">
+        <option value="Nociceptive Pain">Nociceptive Pain</option>
+        <option value="Neuropathic Pain">Neuropathic Pain</option>
+        <option value="Nociplastic Pain">Nociplastic Pain</option>
+        <option value="Mixed Pain">Mixed Pain</option>
+      </select>
+      <p>
+        don't know which one to choose?
+        <a
+          href="https://pain.ucsf.edu/understanding-pain-pain-basics/types-pain"
+          >click here</a
+        >
+        to learn about types of pain
+      </p>
+
+      <label for="notes">Anything more you want the doctor to know?</label>
+      <textarea name="note" id="notes" row="5" cols="5"></textarea>
+
+      <button id="painButton" type="button">Report</button>
+    </form>
     <div class="content">
       <nav>
         <div class="logo">
-          <img src="../assets/logo.png" alt="" />
+          <img src="../../assets/logo.png" alt="" />
         </div>
         <ul>
           <li class="i1">
-            <a href=""><img src="../assets/onHome.png" alt="" /></a>
+            <a href=""><img src="../../assets/onHome.png" alt="" /></a>
           </li>
           <li class="i2">
-            <a href=""><img src="../assets/medication.png" alt="" /></a>
+            <a href=""><img src="../../assets/medication.png" alt="" /></a>
           </li>
           <li class="i3">
-            <a href=""><img src="../assets/vitals.png" alt="" /></a>
+            <a href=""><img src="../../assets/vitals.png" alt="" /></a>
           </li>
           <li class="i4">
-            <a href=""><img src="../assets/doctors.png" alt="" /></a>
+            <a href=""><img src="../../assets/doctors.png" alt="" /></a>
           </li>
           <li class="i5">
-            <a href=""><img src="../assets/calender.png" alt="" /></a>
+            <a href=""><img src="../../assets/calender.png" alt="" /></a>
           </li>
         </ul>
       </nav>
 
       <div class="main">
         <div class="welcomeCard">
-          <img id="welcomImg" src="../assets/homepagedocotor.png" alt="" />
+          <img id="welcomImg" src="../../assets/homepagedocotor.png" alt="" />
           <div>
             <h2>Good morning, patient 105!</h2>
             <div class="reminder">
@@ -49,25 +74,25 @@
 
         <div class="vitals">
           <div>
-            <img src="../assets/heat rate.png" alt="" class="icon" />
+            <img src="../../assets/heat rate.png" alt="" class="icon" />
             <div class="reading">!</div>
             <div class="type">Heart Rate</div>
             <button>Enter Reading</button>
           </div>
           <div>
-            <img src="../assets/blood pressure.png" alt="" class="icon" />
+            <img src="../../assets/blood pressure.png" alt="" class="icon" />
             <div class="reading">120 <small>mm/hg</small></div>
             <div class="type">Blood Pressure</div>
             <!-- <button></button> -->
           </div>
           <div>
-            <img src="../assets/Blood sugar.png" alt="" class="icon" />
+            <img src="../../assets/Blood sugar.png" alt="" class="icon" />
             <div class="reading">106 <small>mm/dl</small></div>
             <div class="type">Blood Sugar</div>
             <!-- <button></button> -->
           </div>
           <div>
-            <img src="../assets/cholesterol.png" alt="" class="icon" />
+            <img src="../../assets/cholesterol.png" alt="" class="icon" />
             <div class="reading">60 <small>mg/dl</small></div>
             <div class="type">Cholesterol</div>
             <!-- <button></button> -->
