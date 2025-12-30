@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="../../style/doctor/patient.css" />
   </head>
   <body>
+    <div id="overlay" class="overlay"></div>
+    <form method="post" id="painForm">
+      <button type="button" id="close">x</button>
+      <h1>pain report</h1>
+      <label for="paintlist">Type of Pain:</label>
+      <option value="Nociceptive Pain">Nociceptive Pain</option>
+      <br />
+      <label for="paintlist">Patient Notes:</label>
+      <option value="Nociceptive Pain">
+        knee is flaring up and can't walk properly
+      </option>
+    </form>
     <div class="content">
       <nav>
         <div class="logo">
@@ -33,6 +45,7 @@
               <img src="../../assets/profile.png" alt="" />
             </div>
             <div class="patient-name">Penelope Adams</div>
+            <button id="reportPain">view pain report</button>
           </div>
 
           <div class="patient-basic-info">

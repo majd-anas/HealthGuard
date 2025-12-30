@@ -210,3 +210,17 @@ input[type="search"]::placeholder {
   transform: scale(1.1);
   text-decoration: underline;
 }
+
+a #pain-report {
+  background-color: rgb(203, 59, 59);
+  padding: 5px 20px;
+  text-decoration: none;
+  color: white;
+  margin-top: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+a #pain-report:hover {
+  transform: translateY(-3px);
+}
