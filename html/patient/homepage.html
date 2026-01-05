@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../../style/patient/homepage.css" />
   </head>
   <body>
+    <div id="reminder">
+      you didn't take all <br />
+      your meds yet!
+    </div>
     <div id="overlay" class="overlay"></div>
     <form method="post" id="painForm">
       <button type="button" id="close">x</button>
@@ -69,6 +73,11 @@
               ><img src="../../assets/Union.png" alt=""
             /></a>
           </li>
+          <li class="i7">
+            <a href="careGiver.html"
+              ><img src="../../assets/onDoctor.png" alt=""
+            /></a>
+          </li>
         </ul>
       </nav>
 
@@ -127,7 +136,7 @@
                 <input type="checkbox" />
                 <span class="slider round"></span>
               </label>
-              <div class="taken">not taken</div>
+              <div class="med" class="nottaken">not taken</div>
             </div>
             <div>
               <div class="medName">Panadol</div>
@@ -138,7 +147,7 @@
                 <input type="checkbox" />
                 <span class="slider round"></span>
               </label>
-              <div class="taken">not taken</div>
+              <div class="med" class="nottaken">not taken</div>
             </div>
             <div>
               <div class="medName">Vitamin D</div>
@@ -149,7 +158,7 @@
                 <input type="checkbox" />
                 <span class="slider round"></span>
               </label>
-              <div class="taken">not taken</div>
+              <div class="med" class="nottaken">not taken</div>
             </div>
             <div>
               <div class="medName">Omol</div>
@@ -160,7 +169,7 @@
                 <input type="checkbox" />
                 <span class="slider round"></span>
               </label>
-              <div class="taken">not taken</div>
+              <div class="med" class="nottaken">not taken</div>
             </div>
           </div>
 

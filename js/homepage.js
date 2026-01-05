@@ -115,11 +115,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const checkboxes = document.querySelectorAll(
     '.switch input[type="checkbox"]'
   );
-  const takenDivs = document.querySelectorAll(".taken");
-
+  const takenDivs = document.querySelectorAll(".med");
+  const reminder = document.querySelector("#reminder");
   checkboxes.forEach((checkbox, index) => {
     checkbox.addEventListener("change", function () {
       takenDivs[index].textContent = this.checked ? "taken" : "not taken";
+      checkbox.classList.toggle("nottaken");
+      const notTaken = document.querySelectorAll(".nottaken");
+      console.log(notTaken.length);
+      if (notTaken.length == 4) {
+        reminder.style.display = "none";
+      } else reminder.style.display = "block";
     });
   });
 });

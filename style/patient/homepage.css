@@ -7,6 +7,9 @@
   list-style: none;
   font-family: "Lato";
 }
+html {
+  position: relative;
+}
 body,
 html {
   height: 100vh;
@@ -262,6 +265,13 @@ small {
 }
 
 .medications .taken {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  justify-self: end;
+  margin-right: 5px;
+}
+
+.medications .nottaken {
   grid-column: 2/3;
   grid-row: 3/4;
   justify-self: end;
@@ -529,4 +539,23 @@ body {
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
   display: none;
+}
+/* body {
+  position: relative;
+} */
+#reminder {
+  position: fixed;
+  background-color: rgb(240, 195, 32);
+  right: 0px;
+  top: 20px;
+  z-index: 100;
+  padding: 10px;
+  border-radius: 100%;
+  font-size: 12px;
+  border: solid 1px white;
+  color: rgb(199, 43, 43);
+  transition: transform 0.5s ease-in-out;
+}
+#reminder:hover {
+  transform: scale(1.2);
 }
